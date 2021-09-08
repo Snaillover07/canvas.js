@@ -1,6 +1,8 @@
 //(c)2021 Mitchell GNU 2.0
 
-function drawLine(x1, y1, x2, y2) {
+function drawLine(x1, y1, x2, y2, strokeColor, lineWidth) {
+    ctx.stokeStyle = strokeColor;
+    ctx.lineWidth = lineWidth;
     ctx.beginPath();
     ctx.moveTo(x1, y1);
     ctx.lineTo(x2, y2);
@@ -35,5 +37,11 @@ function drawBezierCurve(startX, startY, controlX1, controlY1, controlX2, contro
     ctx.beginPath();
     ctx.moveTo(startX, startY);
     ctx.bezierCurveTo(controlX1, controlY1, controlX2, controlY2, endX, endY);
+    ctx.stroke();
+}
+
+function drawRectangle(startX, startY, width, height) {
+    ctx.beginPath();
+    ctx.rect(startX, startY, width, height);
     ctx.stroke();
 }
